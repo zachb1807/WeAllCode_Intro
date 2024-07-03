@@ -65,7 +65,7 @@ export default function Home() {
                     Make sure you don&apos;t release the <Kbd size='xl' fontSize={'20px'}>command ⌘</Kbd> key while trying to paste. Try again.
                 </IncorrectBox>
                 <GreatJobBox display={message == 3 ? 'block' : 'none'}>
-                    Great job! You&apos;ve successfully paste the text from your clipboard.
+                    Great job! You&apos;ve successfully pasted the text from your clipboard.
                 </GreatJobBox>
             </Container>
         </AbsoluteCenter>

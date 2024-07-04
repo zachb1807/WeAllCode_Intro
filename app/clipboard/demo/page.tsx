@@ -106,7 +106,7 @@ export default function Home() {
                         <Box h='10' />
                         <Container centerContent>
                             {pasted ?
-                                <Link href='/keyboard/paste/info'>
+                                <Link href='/keyboard/other-keys'>
                                     <Button colorScheme="blue" size="lg" rightIcon={<ArrowForwardIcon />}>Continue!</Button>
                                 </Link>
                                 :

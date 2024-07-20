@@ -28,7 +28,7 @@ export default function Home() {
         </Text>
         <Box h='14' />
         <Link href="https://wac.fyi/survey">
-          <Button colorScheme="blue" size="lg" rightIcon={<ArrowForwardIcon />}>Try it!</Button>
+          <Button colorScheme="blue" size="lg" rightIcon={<ArrowForwardIcon />}>Open Survey</Button>
         </Link>
 
       </Container>

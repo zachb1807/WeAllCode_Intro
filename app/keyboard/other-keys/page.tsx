@@ -21,17 +21,13 @@ export default function Home() {
   return (
     <AbsoluteCenter>
       <Container centerContent className={`${inter.className}`} maxW='container.xl'>
-        <Heading variant="disable_font" className="shadow-2x">Some other important keys</Heading>
+        <Heading variant="disable_font" className="shadow-2x">Great job!</Heading>
         <Box h='14' />
         <Text fontSize={'xl'} align={'center'} lineHeight={'45px'}>
-          We can &apos;copy&apos; text or images to save it to our computer&apos;s <b>clipboard</b>. This means you can later &apos;paste&apos; it somewhere else to use it again without having to retype it.
+          You've completed the We All Code intro course. If you have time, complete this pre-class survey before we begin.
         </Text>
         <Box h='14' />
-        <Text fontSize={'xl'} align={'center'} lineHeight={'45px'}>
-          To copy, select the text you would like to use, press and <b>hold</b> the <Kbd fontSize={'20px'}>command ⌘</Kbd> key and then press the <Kbd fontSize={'20px'}>C</Kbd> key.
-        </Text>
-        <Box h='14' />
-        <Link href="/keyboard/copy">
+        <Link href="https://wac.fyi/survey">
           <Button colorScheme="blue" size="lg" rightIcon={<ArrowForwardIcon />}>Try it!</Button>
         </Link>
 

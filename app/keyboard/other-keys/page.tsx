@@ -24,7 +24,7 @@ export default function Home() {
         <Heading variant="disable_font" className="shadow-2x">Great job!</Heading>
         <Box h='14' />
         <Text fontSize={'xl'} align={'center'} lineHeight={'45px'}>
-          You've completed the We All Code intro course. If you have time, complete this pre-class survey before we begin.
+          You&apos;ve completed the We All Code intro course. If you have time, complete this pre-class survey before we begin.
         </Text>
         <Box h='14' />
         <Link href="https://wac.fyi/survey">

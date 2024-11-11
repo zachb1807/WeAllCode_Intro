@@ -36,9 +36,12 @@ export default function Home() {
                 localMessage = 1;
             }
             if (event.key == 'c' && localMessage == 1) {
-                localMessage = 2;
-                controller.abort();
-                setCopied(true);
+                const selection = window.getSelection();
+                if (selection?.toString() == "Hello world") {
+                    localMessage = 2;
+                    controller.abort();
+                    setCopied(true);
+                }
             }
         }
             , { signal });
@@ -106,7 +109,7 @@ export default function Home() {
                         <Box h='10' />
                         <Container centerContent>
                             {pasted ?
-                                <Link href='/keyboard/other-keys'>
+                                <Link href='/keyboard/save/info'>
                                     <Button colorScheme="blue" size="lg" rightIcon={<ArrowForwardIcon />}>Continue!</Button>
                                 </Link>
                                 :

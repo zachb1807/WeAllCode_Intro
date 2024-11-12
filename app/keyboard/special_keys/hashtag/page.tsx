@@ -32,10 +32,7 @@ export default function Home() {
         if (text.length == 0) {
             setInputStatus(0)
         }
-        else if(!(text.includes("<") && text.includes(">")) && /^[<>]*$/.test(text)) {
-            setInputStatus(0)
-        }
-        else if (/^[<>]*$/.test(text) && text.includes("<") && text.includes(">")) {
+        else if (/^[#]*$/.test(text) && text.includes('#')) {
             setInputStatus(1);
         } else {
             setInputStatus(2);
@@ -46,20 +43,20 @@ export default function Home() {
     return (
         <AbsoluteCenter>
             <Container centerContent className={`${inter.className}`} maxW='container.xl'>
-                <Heading variant="disable_font" className="shadow-2x" textAlign={'center'}>Practice typing angle brackets:</Heading>
+                <Heading variant="disable_font" className="shadow-2x" textAlign={'center'}>Practice typing a hashtag:</Heading>
                 <Box h='14' />
                 <Image src="/macbook-keyboard-cmd.png" alt="keyboard" borderRadius="15px" boxShadow='dark-lg' />
                 <Box h='14' />
-                <Text fontSize={'xl'}>Using the <Kbd fontSize={22}>&lt;</Kbd> and <Kbd fontSize={22}>&gt;</Kbd> keys, practice typing opening AND closing angle brackets </Text>
+                <Text fontSize={'xl'}>Using the <Kbd fontSize={22}>#</Kbd> key, practice typing some hashtags in the textbox below:</Text>
                 <Box height={5}/>
-                <Text fontSize={'xl'}>You&apos;ll need to hold the <Kbd>Shift</Kbd> key to access the angle brackets.</Text>
+                <Text fontSize={'xl'}>You&apos;ll need to hold the <Kbd>Shift</Kbd> key to access the hashtag.</Text>
                 <Box h='10' />
                 <Input placeholder='Click then type here...' size='lg' variant={'filled'} maxW={'lg'} onChange={(e) => { checkInput(e.target.value) }} focusBorderColor={inputStatus == 0 ? 'blue.500' : inputStatus == 1 ? 'green.500' : 'red.500'} />
                 <Box h={8} />
                 <IncorrectBox display={inputStatus == 2 ? 'block' : 'none'}>
-                    Don&apos;t type anything other than angle brackets.
-                </IncorrectBox> 
-                <Link href="/keyboard/special_keys/curly_braces" >
+                    Don&apos;t type anything other than hashtags.
+                </IncorrectBox>
+                <Link href="/keyboard/special_keys/typing_test" >
                     <Button colorScheme="green" size="lg" rightIcon={<ArrowForwardIcon />} display={inputStatus == 1 ? 'block' : 'none'}>Great job! Continue</Button>
                 </Link>
 

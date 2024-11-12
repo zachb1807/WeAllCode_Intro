@@ -32,8 +32,8 @@ export default function Home() {
                     <ListItem>Commas</ListItem>
                     <ListItem>Parentheses</ListItem>
                     <ListItem>Quotes</ListItem>
-                    <ListItem>Curly braces</ListItem>
                     <ListItem>Angle brackets</ListItem>
+                    <ListItem>Curly braces</ListItem>
                     <ListItem>Hashtags</ListItem>
                 </UnorderedList>
                 <Box h={'10'} />

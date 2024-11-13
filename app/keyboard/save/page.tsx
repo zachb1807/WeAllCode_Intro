@@ -53,7 +53,7 @@ export default function Home() {
             <Container centerContent className={`${inter.className}`} maxW='container.xl'>
                 <Heading variant="disable_font" className="shadow-2x" textAlign={'center'}>Let&apos;s practice the save shortcut:</Heading>
                 <Box h='14' />
-                <Image src={message == 1 ? '/macbook-keyboard-copy-cmdpressed.png' : '/macbook-keyboard-copy.png'} alt="keyboard" borderRadius="15px" boxShadow='dark-lg' />
+                <Image src={message == 1 ? '/macbook-keyboard-save-cmdpressed.png' : '/macbook-keyboard-save.png'} alt="keyboard" borderRadius="15px" boxShadow='dark-lg' />
                 <Box h='14' />
                 <Text fontSize={'xl'}>Start by pressing and holding the <Kbd size='xl' fontSize={'20px'}>command ⌘</Kbd> key</Text>
                 <Box h='14' />

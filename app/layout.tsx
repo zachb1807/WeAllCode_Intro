@@ -22,6 +22,7 @@
 // }
 
 import { Providers } from './providers'
+import "./globals.css";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Welcome to We All Code",
@@ -34,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode,
 }) {
   return (
-    <html lang='en' style={{height: "100%"}}>
+    <html lang='en'>
       <body>
         <Providers>{children}</Providers>
       </body>

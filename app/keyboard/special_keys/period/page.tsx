@@ -45,7 +45,7 @@ export default function Home() {
             <Container centerContent className={`${inter.className}`} maxW='container.xl'>
                 <Heading variant="disable_font" className="shadow-2x" textAlign={'center'}>Practice typing a period:</Heading>
                 <Box h='14' />
-                <Image src="/macbook-keyboard-cmd.png" alt="keyboard" borderRadius="15px" boxShadow='dark-lg' />
+                <Image src="/macbook-keyboard-period.png" alt="keyboard" borderRadius="15px" boxShadow='dark-lg' />
                 <Box h='14' />
                 <Text fontSize={'xl'}>Using the <Kbd fontSize={22}>.</Kbd> key, practice typing some periods in the textbox below:</Text>
                 <Box h='14' />

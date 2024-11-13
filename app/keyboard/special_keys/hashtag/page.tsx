@@ -45,7 +45,7 @@ export default function Home() {
             <Container centerContent className={`${inter.className}`} maxW='container.xl'>
                 <Heading variant="disable_font" className="shadow-2x" textAlign={'center'}>Practice typing a hashtag:</Heading>
                 <Box h='14' />
-                <Image src="/macbook-keyboard-cmd.png" alt="keyboard" borderRadius="15px" boxShadow='dark-lg' />
+                <Image src="/macbook-keyboard-hashtag.png" alt="keyboard" borderRadius="15px" boxShadow='dark-lg' />
                 <Box h='14' />
                 <Text fontSize={'xl'}>Using the <Kbd fontSize={22}>#</Kbd> key, practice typing some hashtags in the textbox below:</Text>
                 <Box height={5}/>

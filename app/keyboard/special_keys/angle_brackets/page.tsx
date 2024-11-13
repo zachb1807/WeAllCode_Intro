@@ -48,7 +48,7 @@ export default function Home() {
             <Container centerContent className={`${inter.className}`} maxW='container.xl'>
                 <Heading variant="disable_font" className="shadow-2x" textAlign={'center'}>Practice typing angle brackets:</Heading>
                 <Box h='14' />
-                <Image src="/macbook-keyboard-cmd.png" alt="keyboard" borderRadius="15px" boxShadow='dark-lg' />
+                <Image src="/macbook-keyboard-angle-brackets.png" alt="keyboard" borderRadius="15px" boxShadow='dark-lg' />
                 <Box h='14' />
                 <Text fontSize={'xl'}>Using the <Kbd fontSize={22}>&lt;</Kbd> and <Kbd fontSize={22}>&gt;</Kbd> keys, practice typing opening AND closing angle brackets </Text>
                 <Box height={5}/>

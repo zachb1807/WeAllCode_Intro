@@ -45,7 +45,7 @@ export default function Home() {
             <Container centerContent className={`${inter.className}`} maxW='container.xl'>
                 <Heading variant="disable_font" className="shadow-2x" textAlign={'center'}>Practice typing quotes:</Heading>
                 <Box h='14' />
-                <Image src="/macbook-keyboard-cmd.png" alt="keyboard" borderRadius="15px" boxShadow='dark-lg' />
+                <Image src="/macbook-keyboard-quotes.png" alt="keyboard" borderRadius="15px" boxShadow='dark-lg' />
                 <Box h='14' />
                 <Text fontSize={'xl'}>Using the <Kbd fontSize={22}>&quot;</Kbd> key, practice typing some quotes in the textbox below:</Text>
                 <Box height={5}/>

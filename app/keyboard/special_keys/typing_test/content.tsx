@@ -20,15 +20,14 @@ export default function TypingTestContent({ chars }: TypingTestPageProps) {
     const [currentInvalid, setCurrentInvalid] = useState(false)
     const [isComplete, setIsComplete] = useState(false)
 
-    const time = useRef(0);
+    const startTime = useRef<number | null>(null);
+    const endTime = useRef<number | null>(null);
+
     const timerStarted = useRef(false);
-    const interval = useRef<NodeJS.Timeout | null>(null);
 
 
     const startTimer = () => {
-        interval.current = setInterval(() => {
-            time.current = time.current + 1
-        }, 10);
+        startTime.current = Date.now()
     }
 
     const toSeconds = (time: number) => {
@@ -36,12 +35,16 @@ export default function TypingTestContent({ chars }: TypingTestPageProps) {
     }
 
     const resetState = () => {
-        time.current = 0
+        startTime.current = null
         chars.sort(() => Math.random() - 0.5)
         setCurrentIndex(0)
         setCurrentInvalid(false)
         setIsComplete(false)
         timerStarted.current = false
+    }
+
+    const getTimeDifference = () => {
+        return endTime.current && startTime.current ? Math.round((endTime.current - startTime.current) / 10) / 100 : 0
     }
 
 
@@ -55,6 +58,7 @@ export default function TypingTestContent({ chars }: TypingTestPageProps) {
             if (!timerStarted.current) {
                 timerStarted.current = true
                 startTimer()
+
             }
             const necessaryKey = chars[currentIndex]
             if (event.key === necessaryKey) {
@@ -62,7 +66,7 @@ export default function TypingTestContent({ chars }: TypingTestPageProps) {
                 setCurrentInvalid(false)
                 if (currentIndex === chars.length - 1) {
                     setIsComplete(true)
-                    clearInterval(interval.current!)
+                    endTime.current = Date.now()
                 }
                 controller.abort();
             }
@@ -76,7 +80,6 @@ export default function TypingTestContent({ chars }: TypingTestPageProps) {
                 setCurrentInvalid(false)
             }
                 , 75)
-            // setCurrentInvalid(false)
         }, { signal });
     }, [chars, currentIndex]);
 
@@ -117,7 +120,7 @@ export default function TypingTestContent({ chars }: TypingTestPageProps) {
                 <ModalOverlay backdropFilter={'blur(12px)'} />
                 <ModalContent className={inter.className} py={6} textAlign={'center'} boxShadow={'0'}>
                     <ModalHeader>
-                        <Heading variant={'disable_font'} size={'xl'}>{toSeconds(time.current)} seconds</Heading>
+                        <Heading variant={'disable_font'} size={'xl'}>{getTimeDifference()} seconds</Heading>
                     </ModalHeader>
                     <ModalBody>
                         <Text fontSize={'lg'}>Great job!</Text>

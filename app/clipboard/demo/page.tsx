@@ -88,7 +88,7 @@ export default function Home() {
                     <Text fontSize={'xl'} textAlign={'center'}>Now click the text box below and paste the words you copied:</Text>
                     <Box h='10' />
                     <Tooltip hasArrow label='Oops, that&apos;s not the right text' bg='red.600' isDisabled isOpen={pasteFailed}>
-                        <Input placeholder='Click then paste here...' size='lg' variant={'filled'} onChange={handleInputChange} onFocusCapture={() => { setPasteFailed(false) }} />
+                        <Input placeholder='Click then paste here...' size='lg' backgroundColor={'white'} boxShadow={'md'} onChange={handleInputChange} onFocusCapture={() => { setPasteFailed(false) }} />
                     </Tooltip>
                     <Box h='10' />
                     {pasted ?

@@ -66,7 +66,7 @@ export default function SpecialKeyContent({ keyName, friendlyName, requiresShift
                 <Text fontSize={'xl'}>Using the <Kbd fontSize={22}>{symbols[0]}</Kbd> {symbols.length > 1 ? <>and <Kbd fontSize={22}>{symbols[1]}</Kbd></> : ''} key{symbols.length > 1 ? 's' : ''}, practice typing some {friendlyName} in the textbox below:</Text>
                 {requiresShift && <Text fontSize={'xl'}>You&apos;ll need to hold the <Kbd>Shift</Kbd> key to access the {friendlyName}.</Text>}
             </Stack>
-            <Input placeholder='Click then type here...' size='lg' variant={'filled'} maxW={'lg'} onChange={(e) => { checkInput(e.target.value) }} focusBorderColor={inputStatus == 0 ? 'blue.500' : inputStatus == 1 ? 'green.500' : 'red.500'} />
+            <Input placeholder='Click then type here...' size='lg' backgroundColor={'white'} boxShadow={'md'} maxW={'lg'} onChange={(e) => { checkInput(e.target.value) }} focusBorderColor={inputStatus == 0 ? 'blue.500' : inputStatus == 1 ? 'green.500' : 'red.500'}/>
             <IncorrectBox display={inputStatus == 2 ? 'block' : 'none'}>
                 Don&apos;t type anything other than {friendlyName}.
             </IncorrectBox>

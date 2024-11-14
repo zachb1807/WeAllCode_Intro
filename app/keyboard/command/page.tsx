@@ -13,7 +13,7 @@ import GreatJobBox from '../../components/GreatJobBox'
 import IncorrectBox from "../../components/IncorrectBox";
 import { useRouter } from 'next/navigation'
 
-import keyboardPic from './macbook-keyboard-cmd.png'
+import keyboardImage from '@/app/image/macbook-keyboard-cmd.png'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -46,7 +46,7 @@ export default function Home() {
   return (
     <>
       <Heading variant="disable_font" className="shadow-2x">Take a look at your keyboard:</Heading>
-        <Image src={keyboardPic} alt="keyboard" placeholder="blur" width={776} height={300} style={{borderRadius: '15px', boxShadow: '0px 12px 15px rgba(0, 0, 0, 0.4)'}} />
+      <Image src={keyboardImage} alt="keyboard" placeholder="blur" width={776} height={300} style={{ borderRadius: '15px', boxShadow: 'rgba(0, 0, 0, 0.1) 0px 0px 0px 1px,rgba(0, 0, 0, 0.2) 0px 5px 10px,rgba(0, 0, 0, 0.4) 0px 15px 40px;' }} />
       <Text fontSize={'xl'}>Locate the <Kbd size='xl' fontSize={'20px'}>command</Kbd> key on your laptop, highlighted in red above, and <b>press it</b>.</Text>
       <GreatJobBox display={commandPressed == true ? 'block' : 'none'}>
         Great job!

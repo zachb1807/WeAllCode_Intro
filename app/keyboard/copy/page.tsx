@@ -1,11 +1,10 @@
 'use client'
 
-// import Image from "next/image";
+import Image from "next/image";
 import { Inter } from "next/font/google";
 import { Container, AbsoluteCenter, Text, Box, Button } from '@chakra-ui/react'
 import { Heading } from '@chakra-ui/react'
 import { ArrowForwardIcon } from '@chakra-ui/icons'
-import { Image } from '@chakra-ui/react'
 import { Kbd } from '@chakra-ui/react'
 import { use, useEffect, useState } from "react";
 import { CheckIcon } from '@chakra-ui/icons'
@@ -13,6 +12,9 @@ import GreatJobBox from '../../components/GreatJobBox'
 import IncorrectBox from "../../components/IncorrectBox";
 import InfoBox from "../../components/InfoBox";
 import { useRouter } from 'next/navigation'
+
+import initialKeyboardImage from '@/app/image/macbook-keyboard-copy.png'
+import cmdKeyboardImage from '@/app/image/macbook-keyboard-copy-cmdpressed.png'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -51,7 +53,7 @@ export default function Home() {
     return (
         <>
             <Heading variant="disable_font" className="shadow-2x" textAlign={'center'}>Let&apos;s practice the copy shortcut:</Heading>
-            <Image src={message == 1 ? '/macbook-keyboard-copy-cmdpressed.png' : '/macbook-keyboard-copy.png'} alt="keyboard" borderRadius="15px" boxShadow='dark-lg' maxH={300}/>
+            <Image src={message == 1 ? cmdKeyboardImage : initialKeyboardImage} alt="keyboard" placeholder="blur" width={776} height={300} style={{ borderRadius: '15px', boxShadow: 'rgba(0, 0, 0, 0.1) 0px 0px 0px 1px,rgba(0, 0, 0, 0.2) 0px 5px 10px,rgba(0, 0, 0, 0.4) 0px 15px 40px;' }} />
             <Text fontSize={'xl'}>Start by pressing and holding the <Kbd size='xl' fontSize={'20px'}>command ⌘</Kbd> key</Text>
 
             <InfoBox display={message == 1 ? 'block' : 'none'} >
@@ -63,6 +65,7 @@ export default function Home() {
             <GreatJobBox display={message == 3 ? 'block' : 'none'}>
                 Great job! You&apos;ve successfully copied some text.
             </GreatJobBox>
+            <Image src={cmdKeyboardImage} alt="keyboard" width={0} height={0} style={{display: "none"}} />
         </>
     );
 }

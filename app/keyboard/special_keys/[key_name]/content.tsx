@@ -2,10 +2,21 @@
 
 import IncorrectBox from "@/app/components/IncorrectBox"
 import { ArrowForwardIcon } from "@chakra-ui/icons"
-import { Heading, Image, Text, Input, Button, Kbd, Box, Stack } from "@chakra-ui/react"
+import { Heading, Text, Input, Button, Kbd, Box, Stack } from "@chakra-ui/react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
+import Image, { StaticImageData } from "next/image";
+
+import angleBracketsKeyboardImage from '@/app/image/macbook-keyboard-angle_brackets.png'
+import commaKeyboardImage from '@/app/image/macbook-keyboard-comma.png'
+import curlyBracesKeyboardImage from '@/app/image/macbook-keyboard-curly_braces.png'
+import hashtagKeyboardImage from '@/app/image/macbook-keyboard-hashtag.png'
+import parenthesesKeyboardImage from '@/app/image/macbook-keyboard-parentheses.png'
+import periodKeyboardImage from '@/app/image/macbook-keyboard-period.png'
+import quotesKeyboardImage from '@/app/image/macbook-keyboard-quotes.png'
+import defaultKeyboardImage from '@/app/image/macbook-keyboard.png'
+
 
 interface Props {
     keyName: string
@@ -17,6 +28,34 @@ interface Props {
 }
 
 export default function SpecialKeyContent({ keyName, friendlyName, requiresShift, nextItem, symbols }: Props) {
+
+    let keyboardImage: StaticImageData
+
+    switch (keyName) {
+        case 'period':
+            keyboardImage = periodKeyboardImage
+            break;
+          case 'comma':
+            keyboardImage = commaKeyboardImage
+            break;
+          case 'parentheses':
+            keyboardImage = parenthesesKeyboardImage
+            break;
+          case 'quotes':
+            keyboardImage = quotesKeyboardImage
+            break;
+          case 'angle_brackets':
+            keyboardImage = angleBracketsKeyboardImage
+            break;
+          case 'curly_braces':
+            keyboardImage = curlyBracesKeyboardImage
+            break;
+          case 'hashtag':
+            keyboardImage = hashtagKeyboardImage
+            break;
+        default:
+            keyboardImage = defaultKeyboardImage
+    }
 
     const checkInput = (text: string) => {
         if (symbols.length == 1) {
@@ -61,7 +100,7 @@ export default function SpecialKeyContent({ keyName, friendlyName, requiresShift
     return (
         <>
             <Heading variant="disable_font" className="shadow-2x" textAlign={'center'}>Practice typing {friendlyName}:</Heading>
-            <Image src={"/macbook-keyboard-" + keyName + ".png"} alt="keyboard" borderRadius="15px" boxShadow='dark-lg' maxH={250} />
+            <Image src={keyboardImage} alt="keyboard" placeholder="blur" width={776} height={300} style={{ borderRadius: '15px', boxShadow: 'rgba(0, 0, 0, 0.1) 0px 0px 0px 1px,rgba(0, 0, 0, 0.2) 0px 5px 10px,rgba(0, 0, 0, 0.4) 0px 15px 40px;' }} />
             <Stack spacing={3}>
                 <Text fontSize={'xl'}>Using the <Kbd fontSize={22}>{symbols[0]}</Kbd> {symbols.length > 1 ? <>and <Kbd fontSize={22}>{symbols[1]}</Kbd></> : ''} key{symbols.length > 1 ? 's' : ''}, practice typing some {friendlyName} in the textbox below:</Text>
                 {requiresShift && <Text fontSize={'xl'}>You&apos;ll need to hold the <Kbd>Shift</Kbd> key to access the {friendlyName}.</Text>}

@@ -101,9 +101,9 @@ export default function TypingTestContent({ chars }: TypingTestPageProps) {
                                 color={currentIndex <= index ? 'black' : 'green.500'}
                                 borderColor={currentInvalid && currentIndex == index ? 'red.500' : currentIndex == index ? 'blue.500' : currentIndex > index ? 'green.500' : ''}
                                 borderWidth={currentIndex == index ? 6 : 2}
-                                backgroundColor={currentInvalid && currentIndex == index ? 'red.200' : currentIndex == index ? '' : currentIndex > index ? 'green.100' : ''}
+                                backgroundColor={currentInvalid && currentIndex == index ? 'red.200' : currentIndex == index ? 'white' : currentIndex > index ? 'green.100' : 'white'}
                                 transform={currentInvalid && currentIndex == index ? 'scale(1.02)' : currentIndex == index ? 'scale(1.1)' : 'scale(1)'}
-                                boxShadow={currentIndex == index ? '2xl' : ''}
+                                boxShadow={currentIndex == index ? '2xl' : 'md'}
                                 transition="0.2s"
                             >
                                 {currentIndex <= index ? char : <CheckIcon />}

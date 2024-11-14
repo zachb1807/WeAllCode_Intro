@@ -127,7 +127,7 @@ export default function TypingTestContent({ chars }: TypingTestPageProps) {
                         <Button colorScheme='blue' mr={3} onClick={() => { resetState() }}>
                             Play again
                         </Button>
-                        <Button variant='ghost' rightIcon={<ArrowForwardIcon />}>Continue</Button>
+                        <Button variant='ghost' rightIcon={<ArrowForwardIcon />}>Move On</Button>
                     </ModalFooter>
                 </ModalContent>
             </Modal>

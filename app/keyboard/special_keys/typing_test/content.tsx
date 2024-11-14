@@ -21,6 +21,7 @@ export default function TypingTestContent({ chars }: TypingTestPageProps) {
     const [isComplete, setIsComplete] = useState(false)
 
     const time = useRef(0);
+    const timerStarted = useRef(false);
     const interval = useRef<NodeJS.Timeout | null>(null);
 
 
@@ -40,13 +41,9 @@ export default function TypingTestContent({ chars }: TypingTestPageProps) {
         setCurrentIndex(0)
         setCurrentInvalid(false)
         setIsComplete(false)
-        startTimer()
+        timerStarted.current = false
     }
 
-
-    useEffect(() => {
-        startTimer()
-    }, []);
 
 
     useEffect(() => {
@@ -55,6 +52,10 @@ export default function TypingTestContent({ chars }: TypingTestPageProps) {
 
 
         document.addEventListener("keydown", (event) => {
+            if (!timerStarted.current) {
+                timerStarted.current = true
+                startTimer()
+            }
             const necessaryKey = chars[currentIndex]
             if (event.key === necessaryKey) {
                 setCurrentIndex(currentIndex + 1)

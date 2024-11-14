@@ -19,34 +19,27 @@ export default function Home() {
     const router = useRouter()
 
     return (
-        <AbsoluteCenter>
-            <Container centerContent className={`${inter.className}`} maxW='container.xl'>
-                <Heading variant="disable_font" className="shadow-2x">Special Keys</Heading>
-                <Box h='14' />
-                <Text fontSize={'xl'} align={'center'} lineHeight={'45px'}>
-                    The keyboard also has keys that allow you to type <b>special characters</b> such as:
-                </Text>
-                <Box h='2' />
-                <UnorderedList fontSize={'xl'}>
-                    <ListItem>Periods</ListItem>
-                    <ListItem>Commas</ListItem>
-                    <ListItem>Parentheses</ListItem>
-                    <ListItem>Quotes</ListItem>
-                    <ListItem>Angle brackets</ListItem>
-                    <ListItem>Curly braces</ListItem>
-                    <ListItem>Hashtags</ListItem>
-                </UnorderedList>
-                <Box h={'10'} />
-                <Text fontSize={'xl'} align={'center'} lineHeight={'45px'}>
-                    Let&apos;s practice a few!
-                </Text>
+        <>
+            <Heading variant="disable_font" className="shadow-2x">Special Keys</Heading>
+            <Text fontSize={'xl'} align={'center'} lineHeight={'45px'}>
+                The keyboard also has keys that allow you to type <b>special characters</b> such as:
+            </Text>
+            <UnorderedList fontSize={'xl'} textAlign={'left'}>
+                <ListItem>Periods</ListItem>
+                <ListItem>Commas</ListItem>
+                <ListItem>Parentheses</ListItem>
+                <ListItem>Quotes</ListItem>
+                <ListItem>Angle brackets</ListItem>
+                <ListItem>Curly braces</ListItem>
+                <ListItem>Hashtags</ListItem>
+            </UnorderedList>
+            <Text fontSize={'xl'} align={'center'} lineHeight={'45px'}>
+                Let&apos;s practice a few!
+            </Text>
 
-                <Box h='10' />
-                <Link href="/keyboard/special_keys/period">
-                    <Button colorScheme="blue" size="lg" rightIcon={<ArrowForwardIcon />}>Try it!</Button>
-                </Link>
-
-            </Container>
-        </AbsoluteCenter>
+            <Link href="/keyboard/special_keys/period">
+                <Button colorScheme="blue" size="lg" rightIcon={<ArrowForwardIcon />}>Try it!</Button>
+            </Link>
+        </>
     );
 }

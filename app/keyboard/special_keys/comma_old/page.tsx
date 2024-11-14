@@ -32,10 +32,7 @@ export default function Home() {
         if (text.length == 0) {
             setInputStatus(0)
         }
-        else if (!(text.includes("(") && text.includes(")")) && /^[()]*$/.test(text)) {
-            setInputStatus(0)
-        }
-        else if (/^[()]*$/.test(text) && text.includes("(") && text.includes(")")) {
+        else if (/^[,]*$/.test(text) && text.includes(",")) {
             setInputStatus(1);
         } else {
             setInputStatus(2);
@@ -45,18 +42,16 @@ export default function Home() {
 
     return (
         <>
-            <Heading variant="disable_font" className="shadow-2x" textAlign={'center'}>Practice typing parentheses:</Heading>
-            <Image src="/macbook-keyboard-parentheses.png" alt="keyboard" borderRadius="15px" boxShadow='dark-lg' />
-            <Text fontSize={'xl'}>Using the <Kbd fontSize={22}>(</Kbd> and <Kbd fontSize={22}>)</Kbd> keys, practice typing opening AND closing paretheses </Text>
-            <Text fontSize={'xl'}>You&apos;ll need to hold the <Kbd>Shift</Kbd> key to access the parentheses.</Text>
+            <Heading variant="disable_font" className="shadow-2x" textAlign={'center'}>Practice typing a comma:</Heading>
+            <Image src="/macbook-keyboard-comma.png" alt="keyboard" borderRadius="15px" boxShadow='dark-lg' />
+            <Text fontSize={'xl'}>Using the <Kbd fontSize={22}>,</Kbd> key, practice typing some commas in the textbox below:</Text>
             <Input placeholder='Click then type here...' size='lg' variant={'filled'} maxW={'lg'} onChange={(e) => { checkInput(e.target.value) }} focusBorderColor={inputStatus == 0 ? 'blue.500' : inputStatus == 1 ? 'green.500' : 'red.500'} />
             <IncorrectBox display={inputStatus == 2 ? 'block' : 'none'}>
-                Don&apos;t type anything other than parentheses.
+                Don&apos;t type anything other than commas.
             </IncorrectBox>
-            <Link href="/keyboard/special_keys/quotes" >
+            <Link href="/keyboard/special_keys/parentheses" >
                 <Button colorScheme="green" size="lg" rightIcon={<ArrowForwardIcon />} display={inputStatus == 1 ? 'block' : 'none'}>Great job! Continue</Button>
             </Link>
         </>
-
     );
 }

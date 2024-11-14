@@ -24,10 +24,14 @@
 import { Providers } from './providers'
 import "./globals.css";
 import type { Metadata } from "next";
+import { Flex, Spacer, Stack } from '@chakra-ui/react';
+import { Inter } from 'next/font/google';
 export const metadata: Metadata = {
   title: "Welcome to We All Code",
 };
 
+
+const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -37,7 +41,13 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body>
-        <Providers>{children}</Providers>
+        <Providers>
+          <Flex flexDirection={'row'} alignItems={'center'} minH={'100%'} justifyContent={'center'} p={6}>
+            <Stack alignItems={'center'} maxW={'container.lg'} spacing={12} className={inter.className} textAlign={'center'}>
+              {children}
+            </Stack>
+          </Flex>
+        </Providers>
       </body>
     </html>
   )

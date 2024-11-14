@@ -65,64 +65,56 @@ export default function Home() {
     };
 
     return (
-        <AbsoluteCenter>
-            <Container centerContent className={`${inter.className}`} maxW='container.xl'>
-                <Heading variant={"disable_font"} className={"shadow-2x"} textAlign={'center'}>Try copying and pasting some text:</Heading>
-                <Box h='10' />
-                <Text fontSize={'xl'} textAlign={'center'}>Start by using your mouse to select and copy the text below:</Text>
-                <Box h='10' />
-                <Tooltip hasArrow label='Tip: Select the text by clicking and dragging over both words'>
-                    <Code fontSize={'2xl'} fontWeight={"bold"} p={"10px"} borderRadius={'10px'} colorScheme="blue" _selection={{ bg: 'blue.500', color: 'white' }}>Hello world</Code>
-                </Tooltip>
-                <Box h='10' />
-                <Box w={'2xl'}>
-                    {copied ?
+        <>
+            <Heading variant={"disable_font"} className={"shadow-2x"} textAlign={'center'}>Try copying and pasting some text:</Heading>
+            <Text fontSize={'xl'} textAlign={'center'}>Start by using your mouse to select and copy the text below:</Text>
+            <Tooltip hasArrow label='Tip: Select the text by clicking and dragging over both words'>
+                <Code fontSize={'2xl'} fontWeight={"bold"} p={"10px"} borderRadius={'10px'} colorScheme="blue" _selection={{ bg: 'blue.500', color: 'white' }}>Hello world</Code>
+            </Tooltip>
+            <Box w={'2xl'}>
+                {copied ?
+                    <Alert variant='subtle' status="success">
+                        <AlertIcon />
+                        Great job copying!
+                    </Alert>
+                    :
+                    <Alert variant='subtle' colorScheme='gray'>
+                        <AlertIcon />
+                        Remember that the shortcut to copy is  <Kbd fontSize={'17px'} mx={'4px'}>command ⌘</Kbd> + <Kbd fontSize={'17px'} mx={'4px'}>C</Kbd>
+                    </Alert>
+                }
+                <Box hidden={!copied}>
+                    <Box h='14' />
+                    <Text fontSize={'xl'} textAlign={'center'}>Now click the text box below and paste the words you copied:</Text>
+                    <Box h='10' />
+                    <Tooltip hasArrow label='Oops, that&apos;s not the right text' bg='red.600' isDisabled isOpen={pasteFailed}>
+                        <Input placeholder='Click then paste here...' size='lg' variant={'filled'} onChange={handleInputChange} onFocusCapture={() => { setPasteFailed(false) }} />
+                    </Tooltip>
+                    <Box h='10' />
+                    {pasted ?
                         <Alert variant='subtle' status="success">
                             <AlertIcon />
-                            Great job copying!
+                            Great job pasting!
                         </Alert>
                         :
                         <Alert variant='subtle' colorScheme='gray'>
                             <AlertIcon />
-                            Remember that the shortcut to copy is  <Kbd fontSize={'17px'} mx={'4px'}>command ⌘</Kbd> + <Kbd fontSize={'17px'} mx={'4px'}>C</Kbd>
+                            Remember that the shortcut to paste is  <Kbd fontSize={'17px'} mx={'4px'}>command ⌘</Kbd> + <Kbd fontSize={'17px'} mx={'4px'}>V</Kbd>
                         </Alert>
                     }
-                    <Box hidden={!copied}>
-                        <Box h='14' />
-                        <Text fontSize={'xl'} textAlign={'center'}>Now click the text box below and paste the words you copied:</Text>
-                        <Box h='10' />
-                        <Tooltip hasArrow label='Oops, that&apos;s not the right text' bg='red.600' isDisabled isOpen={pasteFailed}>
-                            <Input placeholder='Click then paste here...' size='lg' variant={'filled'} onChange={handleInputChange} onFocusCapture={() => { setPasteFailed(false) }} />
-                        </Tooltip>
-                        <Box h='10' />
+                    <Box h='10' />
+                    <Container centerContent>
                         {pasted ?
-                            <Alert variant='subtle' status="success">
-                                <AlertIcon />
-                                Great job pasting!
-                            </Alert>
+                            <Link href='/keyboard/save/info'>
+                                <Button colorScheme="blue" size="lg" rightIcon={<ArrowForwardIcon />}>Continue!</Button>
+                            </Link>
                             :
-                            <Alert variant='subtle' colorScheme='gray'>
-                                <AlertIcon />
-                                Remember that the shortcut to paste is  <Kbd fontSize={'17px'} mx={'4px'}>command ⌘</Kbd> + <Kbd fontSize={'17px'} mx={'4px'}>V</Kbd>
-                            </Alert>
+                            null
                         }
-                        <Box h='10' />
-                        <Container centerContent>
-                            {pasted ?
-                                <Link href='/keyboard/save/info'>
-                                    <Button colorScheme="blue" size="lg" rightIcon={<ArrowForwardIcon />}>Continue!</Button>
-                                </Link>
-                                :
-                                null
-                            }
-                        </Container>
+                    </Container>
 
-                    </Box>
                 </Box>
-
-
-
-            </Container>
-        </AbsoluteCenter>
+            </Box>
+        </>
     );
 }

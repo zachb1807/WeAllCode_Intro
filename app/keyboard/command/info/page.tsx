@@ -9,7 +9,7 @@ import { ArrowForwardIcon } from '@chakra-ui/icons'
 import { Image } from '@chakra-ui/react'
 import { Kbd } from '@chakra-ui/react'
 import { use, useEffect, useState } from "react";
-import { CheckIcon} from '@chakra-ui/icons'
+import { CheckIcon } from '@chakra-ui/icons'
 import Link from "next/link";
 
 
@@ -19,19 +19,14 @@ export default function Home() {
   const router = useRouter()
 
   return (
-    <AbsoluteCenter>
-      <Container centerContent className={`${inter.className}`} maxW='container.xl'>
-        <Heading variant="disable_font" className="shadow-2x">You found the <Kbd>command</Kbd> key!</Heading>
-        <Box h='14' />
-        <Text fontSize={'xl'} align={'center'} lineHeight={'45px'}>
-          We use the command key for special <b>functions</b> and <b>keyboard shortcuts</b> on a MacBook. It has the <Kbd fontSize={'25px'}>⌘</Kbd> symbol on it. You&apos;ll learn more about how to use it on the next page.
-        </Text>
-        <Box h='14' />
-        <Link 	href="/keyboard/copy/info">
+    <>
+      <Heading variant="disable_font" className="shadow-2x">You found the <Kbd>command</Kbd> key!</Heading>
+      <Text fontSize={'xl'} align={'center'} lineHeight={'45px'}>
+        We use the command key for special <b>functions</b> and <b>keyboard shortcuts</b> on a MacBook. It has the <Kbd fontSize={'25px'}>⌘</Kbd> symbol on it. You&apos;ll learn more about how to use it on the next page.
+      </Text>
+      <Link href="/keyboard/copy/info">
         <Button colorScheme="blue" size="lg" rightIcon={<ArrowForwardIcon />}>Continue!</Button>
-        </Link>
-      
-      </Container>
-    </AbsoluteCenter>
+      </Link>
+    </>
   );
 }

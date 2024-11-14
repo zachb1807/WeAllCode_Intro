@@ -41,23 +41,17 @@ export default function Home() {
 
 
     return (
-        <AbsoluteCenter>
-            <Container centerContent className={`${inter.className}`} maxW='container.xl'>
-                <Heading variant="disable_font" className="shadow-2x" textAlign={'center'}>Practice typing a period:</Heading>
-                <Box h='14' />
-                <Image src="/macbook-keyboard-period.png" alt="keyboard" borderRadius="15px" boxShadow='dark-lg' />
-                <Box h='14' />
-                <Text fontSize={'xl'}>Using the <Kbd fontSize={22}>.</Kbd> key, practice typing some periods in the textbox below:</Text>
-                <Box h='14' />
-                <Input placeholder='Click then type here...' size='lg' variant={'filled'} maxW={'lg'} onChange={(e) => { checkInput(e.target.value) }} focusBorderColor={inputStatus == 0 ? 'blue.500' : inputStatus == 1 ? 'green.500' : 'red.500'} />
-                <Box h={10} />
-                <IncorrectBox display={inputStatus == 2 ? 'block' : 'none'}>
-                    Don&apos;t type anything other than periods.
-                </IncorrectBox>
-                <Link href="/keyboard/special_keys/comma" >
-                    <Button colorScheme="green" size="lg" rightIcon={<ArrowForwardIcon />} display={inputStatus == 1 ? 'block' : 'none'}>Great job! Continue</Button>
-                </Link>
-            </Container>
-        </AbsoluteCenter>
+        <>
+            <Heading variant="disable_font" className="shadow-2x" textAlign={'center'}>Practice typing a period:</Heading>
+            <Image src="/macbook-keyboard-period.png" alt="keyboard" borderRadius="15px" boxShadow='dark-lg' />
+            <Text fontSize={'xl'}>Using the <Kbd fontSize={22}>.</Kbd> key, practice typing some periods in the textbox below:</Text>
+            <Input placeholder='Click then type here...' size='lg' variant={'filled'} maxW={'lg'} onChange={(e) => { checkInput(e.target.value) }} focusBorderColor={inputStatus == 0 ? 'blue.500' : inputStatus == 1 ? 'green.500' : 'red.500'} />
+            <IncorrectBox display={inputStatus == 2 ? 'block' : 'none'}>
+                Don&apos;t type anything other than periods.
+            </IncorrectBox>
+            <Link href="/keyboard/special_keys/comma" >
+                <Button colorScheme="green" size="lg" rightIcon={<ArrowForwardIcon />} display={inputStatus == 1 ? 'block' : 'none'}>Great job! Continue</Button>
+            </Link>
+        </>
     );
 }

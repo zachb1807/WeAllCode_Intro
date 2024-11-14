@@ -20,7 +20,6 @@ export default function Home() {
 
     return (
         <>
-        <Image src={'/WeAllCode_logo.webp'}></Image>
             <Heading variant="disable_font" className="shadow-2x">Special Keys</Heading>
             <Text fontSize={'xl'} align={'center'} lineHeight={'45px'}>
                 The keyboard also has keys that allow you to type <b>special characters</b> such as:

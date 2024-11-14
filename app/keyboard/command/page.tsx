@@ -44,7 +44,7 @@ export default function Home() {
   return (
     <>
       <Heading variant="disable_font" className="shadow-2x">Take a look at your keyboard:</Heading>
-      <Image src="/macbook-keyboard-cmd.png" alt="keyboard" borderRadius="15px" boxShadow='dark-lg' />
+      <Image src="/macbook-keyboard-cmd.png" alt="keyboard" borderRadius="15px" boxShadow='dark-lg' maxH={300}/>
       <Text fontSize={'xl'}>Locate the <Kbd size='xl' fontSize={'20px'}>command</Kbd> key on your laptop, highlighted in red above, and <b>press it</b>.</Text>
       <GreatJobBox display={commandPressed == true ? 'block' : 'none'}>
         Great job!

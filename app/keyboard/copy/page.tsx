@@ -51,7 +51,7 @@ export default function Home() {
     return (
         <>
             <Heading variant="disable_font" className="shadow-2x" textAlign={'center'}>Let&apos;s practice the copy shortcut:</Heading>
-            <Image src={message == 1 ? '/macbook-keyboard-copy-cmdpressed.png' : '/macbook-keyboard-copy.png'} alt="keyboard" borderRadius="15px" boxShadow='dark-lg' />
+            <Image src={message == 1 ? '/macbook-keyboard-copy-cmdpressed.png' : '/macbook-keyboard-copy.png'} alt="keyboard" borderRadius="15px" boxShadow='dark-lg' maxH={300}/>
             <Text fontSize={'xl'}>Start by pressing and holding the <Kbd size='xl' fontSize={'20px'}>command ⌘</Kbd> key</Text>
 
             <InfoBox display={message == 1 ? 'block' : 'none'} >

@@ -43,7 +43,7 @@ export default function RootLayout({
       <body>
         <Providers>
           <Flex flexDirection={'row'} alignItems={'center'} minH={'100%'} justifyContent={'center'} p={6}>
-            <Stack alignItems={'center'} maxW={'container.lg'} spacing={12} className={inter.className} textAlign={'center'}>
+            <Stack alignItems={'center'} maxW={'container.lg'} spacing={10} className={inter.className} textAlign={'center'}>
               {children}
             </Stack>
           </Flex>

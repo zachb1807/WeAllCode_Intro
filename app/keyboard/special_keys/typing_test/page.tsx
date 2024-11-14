@@ -1,11 +1,11 @@
 'use server'
 
-import TypingTestPage from "./components"
+import TypingTestContent from "./content"
 
 
 export default async function TypingTest() {
     const chars = [",", ".", "#", "<", "(", '"', ")", ">"].sort(() => Math.random() - 0.5)
     return (
-        <TypingTestPage chars={chars}/>
+        <TypingTestContent chars={chars}/>
     )
 }

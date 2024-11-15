@@ -37,7 +37,7 @@ export default function Home() {
             }
             if (event.key == 'c' && localMessage == 1) {
                 const selection = window.getSelection();
-                if (selection?.toString() == "Hello world") {
+                if (selection?.toString().includes("Hello world")) {
                     localMessage = 2;
                     controller.abort();
                     setCopied(true);

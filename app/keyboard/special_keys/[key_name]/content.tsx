@@ -35,22 +35,22 @@ export default function SpecialKeyContent({ keyName, friendlyName, requiresShift
         case 'period':
             keyboardImage = periodKeyboardImage
             break;
-          case 'comma':
+        case 'comma':
             keyboardImage = commaKeyboardImage
             break;
-          case 'parentheses':
+        case 'parentheses':
             keyboardImage = parenthesesKeyboardImage
             break;
-          case 'quotes':
+        case 'quotes':
             keyboardImage = quotesKeyboardImage
             break;
-          case 'angle_brackets':
+        case 'angle_brackets':
             keyboardImage = angleBracketsKeyboardImage
             break;
-          case 'curly_braces':
+        case 'curly_braces':
             keyboardImage = curlyBracesKeyboardImage
             break;
-          case 'hashtag':
+        case 'hashtag':
             keyboardImage = hashtagKeyboardImage
             break;
         default:
@@ -100,12 +100,14 @@ export default function SpecialKeyContent({ keyName, friendlyName, requiresShift
     return (
         <>
             <Heading variant="disable_font" className="shadow-2x" textAlign={'center'}>Practice typing {friendlyName}:</Heading>
-            <Image src={keyboardImage} alt="keyboard" placeholder="blur" width={776} height={300} style={{ borderRadius: '15px', boxShadow: 'rgba(0, 0, 0, 0.1) 0px 0px 0px 1px,rgba(0, 0, 0, 0.2) 0px 5px 10px,rgba(0, 0, 0, 0.4) 0px 15px 40px;' }} />
+            <Box boxShadow={'dark-lg'} borderRadius={'15px'}>
+                <Image src={keyboardImage} alt="keyboard" placeholder="blur" width={776} height={300} style={{ borderRadius: '15px' }} />
+            </Box>
             <Stack spacing={3}>
                 <Text fontSize={'xl'}>Using the <Kbd fontSize={22}>{symbols[0]}</Kbd> {symbols.length > 1 ? <>and <Kbd fontSize={22}>{symbols[1]}</Kbd></> : ''} key{symbols.length > 1 ? 's' : ''}, practice typing some {friendlyName} in the textbox below:</Text>
                 {requiresShift && <Text fontSize={'xl'}>You&apos;ll need to hold the <Kbd>Shift</Kbd> key to access the {friendlyName}.</Text>}
             </Stack>
-            <Input placeholder='Click then type here...' size='lg' backgroundColor={'white'} boxShadow={'md'} maxW={'lg'} onChange={(e) => { checkInput(e.target.value) }} focusBorderColor={inputStatus == 0 ? 'blue.500' : inputStatus == 1 ? 'green.500' : 'red.500'}/>
+            <Input placeholder='Click then type here...' size='lg' backgroundColor={'white'} boxShadow={'md'} maxW={'lg'} onChange={(e) => { checkInput(e.target.value) }} focusBorderColor={inputStatus == 0 ? 'blue.500' : inputStatus == 1 ? 'green.500' : 'red.500'} />
             <IncorrectBox display={inputStatus == 2 ? 'block' : 'none'}>
                 Don&apos;t type anything other than {friendlyName}.
             </IncorrectBox>

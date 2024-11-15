@@ -53,7 +53,9 @@ export default function Home() {
     return (
         <>
             <Heading variant="disable_font" className="shadow-2x" textAlign={'center'}>Let&apos;s practice the copy shortcut:</Heading>
-            <Image src={message == 1 ? cmdKeyboardImage : initialKeyboardImage} alt="keyboard" placeholder="blur" width={776} height={300} style={{ borderRadius: '15px', boxShadow: 'rgba(0, 0, 0, 0.1) 0px 0px 0px 1px,rgba(0, 0, 0, 0.2) 0px 5px 10px,rgba(0, 0, 0, 0.4) 0px 15px 40px;' }} />
+            <Box boxShadow={'dark-lg'} borderRadius={'15px'}>
+                <Image src={message == 1 ? cmdKeyboardImage : initialKeyboardImage} alt="keyboard" placeholder="blur" width={776} height={300} style={{ borderRadius: '15px' }} />
+            </Box>
             <Text fontSize={'xl'}>Start by pressing and holding the <Kbd size='xl' fontSize={'20px'}>command ⌘</Kbd> key</Text>
 
             <InfoBox display={message == 1 ? 'block' : 'none'} >
@@ -65,7 +67,7 @@ export default function Home() {
             <GreatJobBox display={message == 3 ? 'block' : 'none'}>
                 Great job! You&apos;ve successfully copied some text.
             </GreatJobBox>
-            <Image src={cmdKeyboardImage} alt="keyboard" width={0} height={0} style={{display: "none"}} />
+            <Image src={cmdKeyboardImage} alt="keyboard" width={0} height={0} style={{ display: "none" }} />
         </>
     );
 }

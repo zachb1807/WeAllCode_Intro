@@ -46,7 +46,9 @@ export default function Home() {
   return (
     <>
       <Heading variant="disable_font" className="shadow-2x">Take a look at your keyboard:</Heading>
-      <Image src={keyboardImage} alt="keyboard" placeholder="blur" width={776} height={300} style={{ borderRadius: '15px', boxShadow: 'rgba(0, 0, 0, 0.1) 0px 0px 0px 1px,rgba(0, 0, 0, 0.2) 0px 5px 10px,rgba(0, 0, 0, 0.4) 0px 15px 40px;' }} />
+      <Box boxShadow={'dark-lg'} borderRadius={'15px'}>
+        <Image src={keyboardImage} alt="keyboard" placeholder="blur" width={776} height={300} style={{ borderRadius: '15px' }} />
+      </Box>
       <Text fontSize={'xl'}>Locate the <Kbd size='xl' fontSize={'20px'}>command</Kbd> key on your laptop, highlighted in red above, and <b>press it</b>.</Text>
       <GreatJobBox display={commandPressed == true ? 'block' : 'none'}>
         Great job!

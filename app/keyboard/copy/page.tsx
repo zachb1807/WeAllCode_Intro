@@ -54,8 +54,7 @@ export default function Home() {
         <>
             <Heading variant="disable_font" className="shadow-2x" textAlign={'center'}>Let&apos;s practice the copy shortcut:</Heading>
             <Box boxShadow={'dark-lg'} borderRadius={'15px'}>
-                <Image src={initialKeyboardImage} hidden={message == 1} alt="keyboard" placeholder="blur" width={776} height={300} style={{ borderRadius: '15px' }} />
-                <Image src={cmdKeyboardImage} hidden={message != 1} alt="keyboard" placeholder="blur" width={776} height={300} style={{ borderRadius: '15px' }} />
+                <Image src={initialKeyboardImage} alt="keyboard" placeholder="blur" width={776} height={300} style={{ borderRadius: '15px' }} />
 
             </Box>
             <Text fontSize={'xl'}>Start by pressing and holding the <Kbd size='xl' fontSize={'20px'}>command ⌘</Kbd> key</Text>

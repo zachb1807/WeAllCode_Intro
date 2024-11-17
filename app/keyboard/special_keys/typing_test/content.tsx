@@ -5,6 +5,7 @@ import { Box, Card, Container, Flex, Heading, Modal, ModalOverlay, SimpleGrid, W
 import { Inter } from "next/font/google";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link"
 
 
 
@@ -131,7 +132,9 @@ export default function TypingTestContent({ chars }: TypingTestPageProps) {
                         <Button colorScheme='blue' mr={3} onClick={() => { resetState() }}>
                             Play again
                         </Button>
+                        <Link href="/survey">
                         <Button variant='ghost' rightIcon={<ArrowForwardIcon />}>Move On</Button>
+                        </Link>
                     </ModalFooter>
                 </ModalContent>
             </Modal>

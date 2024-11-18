@@ -35,6 +35,7 @@ export default function Home() {
                 localMessage = 1;
             }
             if (event.key == 's' && localMessage == 1) {
+                event.preventDefault();
                 setMessage(3);
                 localMessage = 3;
                 controller.abort();

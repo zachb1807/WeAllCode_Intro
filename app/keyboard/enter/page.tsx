@@ -13,7 +13,7 @@ import GreatJobBox from '../../components/GreatJobBox'
 import IncorrectBox from "../../components/IncorrectBox";
 import { useRouter } from 'next/navigation'
 
-import keyboardImage from '@/app/image/macbook-keyboard-cmd.png'
+import keyboardImage from '@/app/image/macbook-keyboard-return.png'
 
 const inter = Inter({ subsets: ["latin"] });
 
